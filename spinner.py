@@ -20,11 +20,11 @@ class Spinner:
         for char in self._infinite_loop:
             status = char + ' ' + msg
             write(status); flush()
-            write('\x08'*len(status))
+            write('\x08'*len(status)*2)
             time.sleep(.1)
             if not self._signal:
                 break
-        write(' '*len(status)+'\x08'*len(status))
+        write(' '*len(status)+'\x08'*len(status)*2)
 
     def stop(self):
         self._signal = False
